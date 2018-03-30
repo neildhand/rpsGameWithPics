@@ -39,8 +39,8 @@ body{
 #userImg {
 	position: relative;
 	top: 100px;
-	/* left: 280px; */
-	left: 21%;
+	left: 280px; 
+/*	left: 21%;*/
 	float: left;
 
 }
@@ -49,8 +49,8 @@ body{
 	float: left;
 	position: relative;
 	top: 100px;
-	/* right: 300px; */
-	right: 22%;
+	right: 300px; 
+/*	right: 22%;*/
 
 }
 
