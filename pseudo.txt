@@ -1,0 +1,36 @@
+COMPUTER WINS
+--------------
+if computer picks r and user picks s
+>>>>>>computer wins
+
+if computer picks p and user picks r
+>>>>>>computer wins
+
+if computer picks s and user picks p
+>>>>>>computer wins
+---------------------------------------------------------------
+USER WINS
+----------
+if user picks r and computer picks s
+>>>>>>user wins
+
+if user picks p and computer picks r
+>>>>>>>user wins
+
+if user picks s and computer picks p
+>>>>>>>user wins
+---------------------------------------------------------------
+TIES
+-----
+if user picks r and computer picks r
+>>>>>>tie
+
+if user picks p and computer picks p
+>>>>>tie
+
+if user picks s and computer picks s
+>>>>>tie
+
+
+
+

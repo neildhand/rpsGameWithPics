@@ -1,0 +1,97 @@
+body{
+	background-color: black;
+	background-image: url("rrphantom.jpg");
+	background-repeat:no-repeat;
+	background-size: cover;
+}
+
+.container{
+	background-blend-mode: multiply;
+	background-color: transparent;
+}
+
+
+#head{
+	text-align: center;
+	color: red;
+}
+
+#game{
+	clear: both;
+	/* overflow: auto; */
+}
+
+#computerChoiceId{
+	float: left;
+	margin-left: 10%;
+	color: red;
+	/*clear: both;*/
+}
+
+#userChoiceId{
+	/*clear: both;*/
+	/*overflow: auto;*/
+	float: right;
+	color: red;
+	margin-right: 10%;
+}
+
+#userImg {
+	position: relative;
+	top: 100px;
+	/* left: 280px; */
+	left: 21%;
+	float: left;
+
+}
+
+#computerImg {
+	float: left;
+	position: relative;
+	top: 100px;
+	/* right: 300px; */
+	right: 22%;
+
+}
+
+@media only screen and (max-width: 722px) {
+	body{
+	background-color: black;
+	background-image: url("rrphantom.jpg");
+	background-repeat:no-repeat;
+	background-size: cover;
+}
+
+.container{
+	background-blend-mode: multiply;
+	background-color: transparent;
+
+
+}
+
+
+#head{
+	text-align: center;
+	color: red;
+}
+
+#game{
+	clear: both;
+	overflow: auto;
+}
+
+#computerChoiceId{
+	float: left;
+	margin-left: 10%;
+	color: red;
+	/*clear: both;*/
+}
+
+#userChoiceId{
+	/*clear: both;*/
+	/*overflow: auto;*/
+	float: right;
+	color: red;
+	margin-right: 10%;
+}
+}

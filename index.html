@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Rock Paper Scissors</title>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+
+<body>
+
+	<h1 id="head">Rock, Paper, Scissors! type the letter r for rock, p for paper, or s for scissors to play</h1>
+  <div class="container">
+    <div id="score">
+      <h4> User: <span id="userScore"></span></h4>
+      <h4> Computer: <span id="computerScore"></span></h4>
+    </div>
+
+    <div id="game">
+  	 <h2 id="computerChoiceId"> The computer chose <span id="computerLetter"> <strong> ....Nothing </strong></span></h2>
+     <div id="computerImg"></div>
+
+  	 <h2 id="userChoiceId">You chose <span id="userLetter"> <strong>.....Nothing</strong></span></h2>
+     <div id="userImg"></div>
+    </div>
+  </div>
+
+  <script type="text/javascript">
+      var userScore = 0;
+      var computerScore = 0;
+
+      document.getElementById("userScore").innerHTML = userScore;
+      document.getElementById("computerScore").innerHTML = computerScore;
+
+    // Whenever a key is pressed, alert "pressed a button".
+    document.onkeyup = function(event) {
+      var userLetter = document.getElementById("userLetter");
+      var userChoice = userLetter.textContent;
+      userChoice = event.key;
+
+      console.log(userChoice);
+
+      //changes user choice to lowercase
+      var userLowerChoice = userChoice.toLowerCase();
+
+      //array of choices for computer to choose from
+      var computerArray = ['r', 'p', 's'];
+      //selects random choice from array for the computer
+      var computerChoice = computerArray[Math.floor(Math.random() * computerArray.length)];
+      console.log("this is the computer choice: " + computerChoice);
+
+
+
+      //COMPUTER WINS
+      if(computerChoice === 'r' && userLowerChoice === 's'){
+        document.getElementById("userLetter").innerHTML = "Scissors!";
+        document.getElementById("computerLetter").innerHTML = "Rock!";
+        computerScore++;
+        document.getElementById("computerScore").innerHTML = computerScore;
+        console.log("The score is User: " + userScore + " Computer: " + computerScore);
+      } else if(computerChoice === 'p' && userLowerChoice === 'r'){
+        document.getElementById("userLetter").innerHTML = "Rock!";
+        document.getElementById("computerLetter").innerHTML = "Paper!";
+        computerScore++;
+        document.getElementById("computerScore").innerHTML = computerScore;
+        console.log("The score is User: " + userScore + " Computer: " + computerScore);
+      } else if(computerChoice === 's' && userLowerChoice === 'p'){
+        document.getElementById("userLetter").innerHTML = "Paper!";
+        document.getElementById("computerLetter").innerHTML = "Scissors!";
+        computerScore++;
+        document.getElementById("computerScore").innerHTML = computerScore;
+        console.log("The score is User: " + userScore + " Computer: " + computerScore);
+      }
+      //-----------------------------------------------------------------------------------
+      //USER WINS
+      else if(computerChoice === 's' && userLowerChoice === 'r'){
+        document.getElementById("userLetter").innerHTML = "Rock!";
+        document.getElementById("computerLetter").innerHTML = "Scissors!";
+        userScore++;
+        document.getElementById("userScore").innerHTML = userScore;
+        console.log("The score is User: " + userScore + " Computer: " + computerScore);
+      } else if(computerChoice === 'r' && userLowerChoice === 'p'){
+        document.getElementById("userLetter").innerHTML = "Paper!";
+        document.getElementById("computerLetter").innerHTML = "Rock!";
+        userScore++;
+        document.getElementById("userScore").innerHTML = userScore;
+        console.log("The score is User: " + userScore + " Computer: " + computerScore);
+      } else if(computerChoice === 'p' && userLowerChoice === 's'){
+        document.getElementById("userLetter").innerHTML = "Scissors!";
+        document.getElementById("computerLetter").innerHTML = "Paper!";
+        userScore++;
+        document.getElementById("userScore").innerHTML = userScore;
+        console.log("The score is User: " + userScore + " Computer: " + computerScore);
+      }
+      //---------------------------------------------------------------------------------
+      //TIES
+      else if(computerChoice === 'r' && userLowerChoice === 'r'){
+        document.getElementById("userLetter").innerHTML = "Rock!";
+        document.getElementById("computerLetter").innerHTML = "Rock!";
+        console.log("Tie! go again.");
+        console.log("The score is User: " + userScore + " Computer: " + computerScore);
+      } else if(computerChoice === 'p' && userLowerChoice === 'p'){
+        document.getElementById("userLetter").innerHTML = "Paper!";
+        document.getElementById("computerLetter").innerHTML = "Paper!";
+        console.log("Tie! go again.");
+        console.log("The score is User: " + userScore + " Computer: " + computerScore);
+      } else if(computerChoice === 's' && userLowerChoice === 's'){
+        document.getElementById("userLetter").innerHTML = "Scissors!";
+        document.getElementById("computerLetter").innerHTML = "Scissors!";
+        console.log("Tie! go again.");
+        console.log("The score is User: " + userScore + " Computer: " + computerScore);
+      }
+      //---------------------------------------------------------------------------------
+      //INCORRECT INPUT
+      else {
+        alert("Please press 'r' for rock, 'p' for paper, or 's' for scissors!");
+      }
+      //------------------------------------------------------------------------
+
+      //image displays
+      if(userLowerChoice === 'r') {
+        show_image("rock.jpg", 300, 300, "rock image", "userImg");
+      } else if (userLowerChoice === 'p') {
+        show_image("paper.jpg", 300, 300, "paper image", "userImg");
+      } else if (userLowerChoice === 's') {
+        show_image("scissors.jpg", 300, 300, "scissors image", "userImg");
+      }
+
+      if(computerChoice === 'r') {
+        show_image("rock.jpg", 300, 300, "rock image", "computerImg");
+      } else if (computerChoice === 'p') {
+        show_image("paper.jpg", 300, 300, "paper image", "computerImg");
+      } else if (computerChoice === 's') {
+        show_image("scissors.jpg", 300, 300, "scissors image", "computerImg")
+      }
+
+
+    function show_image(src, width, height, alt, div) {
+      var img = document.createElement("img");
+      img.src = src;
+      img.width = width;
+      img.height = height;
+      img.alt = alt;
+      //img.margin = 100;
+
+    // This next line will just add it to the <body> tag
+    $("#" + div).html(img);
+}
+
+
+    };
+  </script>
+
+</body>
+
+</html>
